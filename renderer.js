@@ -1,10 +1,10 @@
 // Load in our dependencies
-const assert = require('assert');
-const fs = require('fs');
+const assert = require("assert");
+const fs = require("fs");
 
 // Define our constants
 const SQUARE_SIZE = 3; // px
-const CONTENT_FILEPATH = __dirname + '/README.md';
+const CONTENT_FILEPATH = __dirname + "/README.md";
 
 // Define and run our main function
 function main(contentBuff) {
@@ -23,7 +23,7 @@ function main(contentBuff) {
       // Generate our row/column index in our flat array
       // [00, 01] -> row 00, col 01 -> 0x00 + 0x01 -> 0x01
       // [01, 00] -> row 01, col 00 -> 0x100 + 0x00 -> 0x100 (256)
-      let index = (lastVal * 0x100) + currentVal;
+      let index = lastVal * 0x100 + currentVal;
 
       // Increment our value
       digraphArr[index] += 1;
@@ -31,14 +31,14 @@ function main(contentBuff) {
   }
 
   // Size out our canvas
-  let canvasEl = document.getElementById('canvas');
+  let canvasEl = document.getElementById("canvas");
   assert(canvasEl);
   canvasEl.width = 0x100 * SQUARE_SIZE;
   canvasEl.height = 0x100 * SQUARE_SIZE;
-  let context = canvasEl.getContext('2d');
+  let context = canvasEl.getContext("2d");
 
   // Backfill our canvas as white
-  context.fillStyle = '#FFF';
+  context.fillStyle = "#FFF";
   context.fillRect(0, 0, 0x100 * SQUARE_SIZE, 0x100 * SQUARE_SIZE);
 
   // Render our graph
@@ -51,7 +51,12 @@ function main(contentBuff) {
       if (value > 0) {
         // Update our darkness for our pixel and draw it
         context.fillStyle = `rgba(0, 0, 0, ${value / maxValue})`;
-        context.fillRect(i * SQUARE_SIZE, j * SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
+        context.fillRect(
+          i * SQUARE_SIZE,
+          j * SQUARE_SIZE,
+          SQUARE_SIZE,
+          SQUARE_SIZE
+        );
       }
     }
   }
