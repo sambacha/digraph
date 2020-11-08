@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>gist-digraph-visualization renderer</title>
+    <style>
+      body {
+        background: linen;
+      }
+
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Provide default content -->
+    <p>Below is a digraph for our README text</p>
+    <canvas id="canvas"></canvas>
+
+    <!-- Load our development script -->
+    <script>
+      void require('./renderer.js');
+    </script>
+
+    <!-- Inject our LiveReload script -->
+    <script src="http://localhost:35729/livereload.js"></script>
+  </body>
+</html>
