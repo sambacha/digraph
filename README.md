@@ -11,10 +11,6 @@ Inspired by [Chris Domas' cantor.dust demo][cantor.dust demo] and Greg Conti's p
 To run our application, run the following:
 
 ```bash
-# Clone our repo
-git clone git@gist.github.com:REPO.git gist-digraph-visualization
-cd gist-digraph-visualization
-
 # Install our dependencies
 npm install
 
