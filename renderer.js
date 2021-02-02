@@ -4,7 +4,7 @@ const fs = require("fs");
 
 // Define our constants
 const SQUARE_SIZE = 3; // px
-const CONTENT_FILEPATH = __dirname + "/README.md";
+const CONTENT_FILEPATH = __dirname + "./BYTECODE.txt";
 
 // Define and run our main function
 function main(contentBuff) {
